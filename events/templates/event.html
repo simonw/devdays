@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+<base href="http://stackoverflow.carsonified.com/" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<link rel="stylesheet" href="/css/devdays_main.css" type="text/css" /> 
+<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" href="/css/devdays_ie6.css" media="screen">
+<![endif]--> 
+<title>StackOverflow DevDays &raquo; {{ event.location }}</title> 
+ 
+</head> 
+ 
+<body id="event"  class="austin"> 
+ 
+<div class="outerWrapper"> 
+<div class="innerWrapper"> 
+ 
+	<div id="content" class="clearfix"> 
+    <div class="primary"> 
+    
+    <div id="header" class="clearfix"> 
+    <h1 class="carsonifiedPresents"><span>Carsonified Presents... StackOverflow DevDays</span></h1> 
+    </div> 
+		
+    <h2 class="event-title"><span>{{ event.location }}, {{ event.date|date:"M j" }}</span></h2> 
+	<a id="title-buy" href="http://www.amiando.com/stackoverflowdevdays-austin.html">Buy Ticket</a> 
+ 
+	<div class="schedule"> 
+		<h3>Schedule</h3> 
+	    <table id="schedule"> 
+			<tr> 
+			<th scope="col">Time</th> 
+			<th scope="col">{{ event.date|date:"l F jS" }}</th> 
+			</tr> 
+ 			{% for session in event.session_set.all %}
+			<tr> 
+			<td class="time">{{ session.start|time:"H:i" }}
+				 - {{ session.end|time:"H:i" }}</td> 
+			{% if session.speakers.all %}
+				<td class="slot speaker">{{ session.speakers.all|join:" and " }} <span class="topic">{{ session.topic }}</span></td> 
+			{% else %}
+				<td class="slot">{{ session.topic }}</td> 
+			{% endif %}
+			</tr> 
+			{% endfor %}
+			
+
+		</table> 
+		
+		<div id="schedule-ad"> 
+			<p>WiFi at the event provided by:<p> 
+			<a href="http://codero.com"><img src="/images/content/logo_codero.jpg" alt="Codero Logo"/></a> 
+			<p class="strap">Dedicated Server Solutions<p> 
+		</div> 
+	</div> 
+ 
+	<div class="event-sponsors clearfix"> 
+	    <h3>Supported By</h3> 
+	    <a class="smartbear" href="http://smartbear.com/" target="_blank"><img src="/images/content/logo_smartbear.jpg" alt="Smartbear Logo" /></a> 
+	    <a class="build-sign" href="http://buildasign.com/" target="_blank"><img src="/images/content/logo_build-sign.jpg" alt="BuildASign.com Logo" /></a> 
+	</div> 
+ 
+    <div class="venue clearfix"> 
+    <h3>Venue</h3> 
+    <div class="content-wrap"> 
+		<h4>Monarch Event Center</h4> 
+		<p>The Monarch Event Center is located in central Austin just 5 minutes away from downtown central Austin.</p> 
+	</div> 
+	<div class="vcard"> 
+			<img src="/images/content/venues/austin.jpg" alt="Venue Photo" /> 
+			<p> 
+			<strong class="fn org"><a href="http://www.monarcheventcenter.com/">Monarch Event Center</a></strong><br /> 
+			<span class="adr"> 
+				<span class="street-address">6406 North IH-35 Suite 3100</span>, 
+				<span class="locality">Austin, Texas</span>, 
+				<a class="postcode" href="http://maps.google.com/maps?&amp;f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=78752&amp;sll=37.0625,-95.677068&amp;sspn=39.371738,93.076172&amp;ie=UTF8&amp;z=14&amp;iwloc=A">78752</a>, 
+				<abbr class="country-name" title="United State of America">USA</abbr><br /> 
+				Tel: <span class="tel">512.371.1711</span> 
+			</span> 
+			</p> 
+			<p class="hotels"><a href="http://http://www.hawthorn.com" target="_blank">Hawthorn</a> are offering discounts for attendees. Just call 1-800-527-1133 and quote 'Stackoverflow Dev Days' when booking your Austin hotel room.</p> 
+			<p class="hotels"><a href="http://www.kayak.com/hotels" target="_blank">Find other hotels nearby</a> &raquo;</p> 
+		</div> 
+	</div> 
+ 
+    <div class="sponsors-meta"> 
+    	<h3>Sponsor Details</h3> 
+       	<h4>Smart Bear</h4> 
+	    <p>Smart Bear makes Code Collaborator - the most popular tool for automating peer code review. It simplifies reviews by providing an easy way to share source changes and discuss code, all with no meetings! Code Collaborator takes the "grunt work" out of code review, so developers actually enjoy doing it. <a href="http://smartbear.com">http://smartbear.com</a></p> 
+	
+		<h4>Codero</h4> 
+		<p>Codero is a dedicated server solutions company offering  a full line of high performance Windows® and Linux servers with service enhancements such as back-up services, security services, eCommerce hosting, network services and server access tools. Codero utilizes servers from Intel and Dell and provides 24/7/365 U.S.-based support to ensure reliable performance. <a href="http://codero.com">http://codero.com</a></p> 
+		
+		<h4>BuildASign.com</h4> 
+  		<p>BuildASign.com&trade; is an entirely new kind of sign company where it is simple for anyone to quickly and easily create high quality, custom signage in under 5 minutes!  Featuring a state of the art online sign design tool, BuildASign.com has made it easier than ever to create great-looking, 100% customized signs without the need for a graphic designer or expensive design software.  The custom signs e-retailer stands apart from the competition with its record turn times, competitively low prices and an ever expanding product line of custom signs, banners, magnets, decals and much more. <a href="http://buildasign.com">http://buildasign.com</a></p> 
+	</div> 
+    
+		
+    <a class="fullyCarsonified" href="http://www.carsonified.com" target="_blank"><span>Fully Carsonified</span></a> 
+    </div> 
+    
+	    <div class="secondary clearfix"> 
+    <ul id="mainNav"> 
+    <li><a class="home" href="/">Home</a></li> 
+    <li><a href="mailto:devdays@stackoverflow.com">Contact</a></li> 
+    <li><a class="tickets" href="/events/">Tickets</a></li> 
+    </ul>	
+	<h2 class="speakerHeading"><span>Speakers:</span></h2> 
+	    <ul class="speakers clearfix"> 
+		{% for speaker in speakers %}
+	    <li> 
+		{% if speaker.image_url %}
+	    <img src="{{ speaker.image_url }}" alt="{{ speaker }}" /> 
+		{% else %}
+		<span class="imgTmp"></span> 
+		{% endif %}
+	    <h4>{{ speaker }}</h4> 
+		{% if speaker.bio %}
+		<span>{{ speaker.bio|safe }}</span> 
+		{% endif %}
+	    </li> 
+		{% endfor %}
+
+	</ul> 
+	
+    </div><!-- primary end --> 
+    
+    </div><!--  content end --> 
+ 
+</div><!-- INNER WRAPPER END --> 
+</div><!-- OUTER WRAPPER END --> 
+ 
+</body> 
+</html>
